@@ -1,0 +1,113 @@
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    
+::selection
+    background-color: #fff
+    color: black
+
+html
+    font-size: 16px
+
+body
+    background: url($bg-image) center center no-repeat
+    background-size: cover
+    height: 100vh
+    position: relative
+    color: white
+    display: flex
+    flex-direction: column
+    width: 100vw
+a
+    &:link,
+    &:visited
+        color: white
+        transition: all 0.2s ease
+    &:hover,
+    &:active
+        opacity: 0.8
+
+nav
+    display: flex
+    align-items: center
+    width: 100%
+    padding: 0 30px
+
+    .logo
+        height: 115px
+        min-height: 115px
+        cursor: pointer
+        svg
+            height: 100%
+    
+    .contact
+        margin-left: auto
+        text-align: right
+        font-weight: bold
+        letter-spacing: 1px
+        .phone
+            margin-bottom: 10px
+
+h2
+    text-transform: uppercase
+    letter-spacing: 2px
+    font-size: 4em
+    font-weight: normal
+    margin-bottom: 60px
+    span
+        font-size: 0.5em
+h4
+    text-transform: uppercase
+    font-size: 1.5em
+    font-weight: normal
+    letter-spacing: 4px
+    margin-bottom: 40px
+    &:after
+        content: ""
+        display: block
+        margin-top: 40px
+        height: 2px
+        width: 80%
+        background-color: rgba(255,255,255,0.5)
+
+a.btn 
+    padding: 12px 60px
+    border: 2px solid white
+    border-radius: 100px
+    text-decoration: none
+    text-transform: uppercase
+    font-weight: bold
+    letter-spacing: 1px
+    &:hover
+        opacity: 1
+        background-color: #fff
+        color: black
+
+.body
+    display: flex
+    align-items: center
+    margin-top: auto
+    margin-bottom: auto
+    width: 100%
+    padding: 0 100px
+    .singer
+        margin-left: auto
+        display: flex
+        align-items: center
+        text-align: center
+        flex-direction: column
+        h2
+            margin-bottom: 0
+            margin-top: 60px
+            text-shadow: 0px 3px 6px rgba(0,0,0,0.15)
+        .image-container
+            height: auto
+            max-height: 300px
+            overflow: hidden
+            width: auto
+            max-width: 300px
+        img
+            height: 100%
+            width: 100%
+            border-radius: 50%

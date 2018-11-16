@@ -36,11 +36,11 @@ gulp.task('html', function() {
 // SASS Task
 gulp.task('sass', function() {
     return gulp.src(sassSource)
-        .pipe(plumber())
         .pipe(sass({
             outputStyle: 'compressed'
         }))
         .pipe(autoprefixer())
+        .pipe(plumber())
         .pipe(concat('style.css'))
         .pipe(gulp.dest(cssDestination))
 });
@@ -83,7 +83,6 @@ gulp.task('watch', function() {
     });
 
     gulp.watch(htmlSource, ['html']);
-    gulp.watch(sassSource, ['sass']);
     gulp.watch(jsSource, ['js']);
     gulp.watch(imgSource, ['image-minify']);
     gulp.watch(faviconSource, ['favicon']);
@@ -96,4 +95,4 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', [ 'html', 'sass', 'js', 'image-minify', 'favicon', 'watch' ]);
+gulp.task('default', [ 'html', 'js', 'image-minify', 'favicon', 'watch' ]);
