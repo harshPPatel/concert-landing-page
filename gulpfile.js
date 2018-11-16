@@ -40,6 +40,7 @@ gulp.task('sass', function() {
         .pipe(sass({
             outputStyle: 'compressed'
         }))
+        .pipe(autoprefixer())
         .pipe(concat('style.css'))
         .pipe(gulp.dest(cssDestination))
 });
