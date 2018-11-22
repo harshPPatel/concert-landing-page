@@ -2,23 +2,30 @@
     box-sizing: border-box
     margin: 0
     padding: 0
-    
+
 ::selection
     background-color: #fff
     color: black
 
 html
     font-size: 16px
+    @media(max-width: 1140px)
+      font-size: 14px
+    @media(max-width: 625px)
+      font-size: 10px
 
 body
     background: url($bg-image) center center no-repeat
     background-size: cover
     height: 100vh
+    min-height: 1000px
     position: relative
     color: white
     display: flex
     flex-direction: column
     width: 100vw
+    @media(max-width: 625px)
+      min-height: 850px
 a
     &:link,
     &:visited
@@ -40,7 +47,7 @@ nav
         cursor: pointer
         svg
             height: 100%
-    
+
     .contact
         margin-left: auto
         text-align: right
@@ -55,6 +62,10 @@ h2
     font-size: 4em
     font-weight: normal
     margin-bottom: 60px
+    @media(max-width: 1140px)
+      font-size: 3em
+    @media(max-width: 625px)
+      margin-bottom: 30px
     span
         font-size: 0.5em
 h4
@@ -63,6 +74,8 @@ h4
     font-weight: normal
     letter-spacing: 4px
     margin-bottom: 40px
+    @media(max-width: 625px)
+      margin-bottom: 20px
     &:after
         content: ""
         display: block
@@ -70,8 +83,13 @@ h4
         height: 2px
         width: 80%
         background-color: rgba(255,255,255,0.5)
+        @media(max-width: 1140px)
+          margin-left: auto
+          margin-right: auto
+        @media(max-width: 625px)
+          margin-top: 30px
 
-a.btn 
+a.btn
     padding: 12px 60px
     border: 2px solid white
     border-radius: 100px
@@ -83,30 +101,53 @@ a.btn
         opacity: 1
         background-color: #fff
         color: black
+    @media(max-width: 1140px)
+      background-color: #fff
+      color: #2e2e2e
+      &:hover
+        opacity: 0.8
 
 .body
     display: flex
     align-items: center
     margin-top: auto
     margin-bottom: auto
-    width: 100%
+    width: 100vw
     padding: 0 100px
+    @media(max-width: 1140px)
+      flex-direction: column
+      .text-content
+        order: 1
+        text-align: center
+    @media(max-width: 625px)
+      padding: 0 50px
     .singer
         margin-left: auto
         display: flex
         align-items: center
         text-align: center
         flex-direction: column
+        @media(max-width: 1140px)
+          margin-right: auto
+          order: 0
         h2
             margin-bottom: 0
             margin-top: 60px
             text-shadow: 0px 3px 6px rgba(0,0,0,0.15)
+            @media(max-width: 1140px)
+              margin-top: 30px
+              margin-bottom: 40px
+            @media(max-width: 625px)
+              margin-bottom: 30px
         .image-container
             height: auto
             max-height: 300px
             overflow: hidden
             width: auto
             max-width: 300px
+            @media(max-width: 1140px)
+              max-height: 200px
+              max-width: 200px
         img
             height: 100%
             width: 100%
@@ -116,9 +157,11 @@ footer
     margin-bottom: 60px
     padding: 0 100px
     p
+        opacity: 0.5
+        letter-spacing: 2px
         margin-top: 10px
         text-transform: uppercase
-        font-weight: bold
-        letter-spacing: 1px
+        @media(max-width: 1140px)
+          text-align: center
         &:first-of-type
             margin-top: 0
