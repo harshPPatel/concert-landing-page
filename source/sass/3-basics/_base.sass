@@ -1,0 +1,28 @@
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+::selection
+    background-color: #fff
+    color: black
+
+html
+    font-size: 16px
+    @media(max-width: 1140px)
+      font-size: 14px
+    @media(max-width: 625px)
+      font-size: 10px
+
+body
+    background: url($bg-image) center center no-repeat
+    background-size: cover
+    height: 100vh
+    min-height: 1000px
+    position: relative
+    color: white
+    display: flex
+    flex-direction: column
+    width: 100vw
+    @media(max-width: 625px)
+      min-height: 850px
