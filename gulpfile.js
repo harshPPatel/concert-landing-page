@@ -15,7 +15,7 @@ var htmlSource = 'source/*.html',
     jsSource = 'source/js/*.js',
     imgSource = 'source/img/*',
     faviconSource = 'source/favicon/*';
-    
+
 var htmlDestination = 'build/',
     cssDestination = 'build/assets/css/',
     jsDestination = 'build/assets/js/',
@@ -24,7 +24,7 @@ var htmlDestination = 'build/',
 
 
 // HTML Task
-gulp.task('html', function() {
+gulp.task('html', function () {
     gulp.src(htmlSource)
         .pipe(plumber())
         .pipe(htmlmim({
@@ -34,7 +34,7 @@ gulp.task('html', function() {
 });
 
 // SASS Task
-gulp.task('sass', function() {
+gulp.task('sass', function () {
     return gulp.src(sassSource)
         .pipe(sass({
             outputStyle: 'compressed'
@@ -46,14 +46,14 @@ gulp.task('sass', function() {
 });
 
 // JS Task
-gulp.task('js', function(cb) {
+gulp.task('js', function (cb) {
     pump([
-        gulp.src(jsSource),
-        plumber(),
-        uglify(),
-        gulp.dest(jsDestination)
-    ],
-    cb
+            gulp.src(jsSource),
+            plumber(),
+            uglify(),
+            gulp.dest(jsDestination)
+        ],
+        cb
     );
 });
 
@@ -74,7 +74,7 @@ gulp.task('favicon', () => {
 });
 
 // Watch Task
-gulp.task('watch', function() {
+gulp.task('watch', function () {
     browserSync.init({
         server: {
             baseDir: './build'
@@ -86,6 +86,7 @@ gulp.task('watch', function() {
     gulp.watch(jsSource, ['js']);
     gulp.watch(imgSource, ['image-minify']);
     gulp.watch(faviconSource, ['favicon']);
+    gulp.watch(sassSource, ['sass']);
     gulp.watch([
         'build/*.html',
         'build/assets/img/*',
@@ -95,4 +96,4 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', [ 'html', 'js', 'image-minify', 'favicon', 'watch' ]);
+gulp.task('default', ['html', 'js', 'image-minify', 'favicon', 'watch']);

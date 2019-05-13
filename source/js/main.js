@@ -1,8 +1,11 @@
 //Set the date we are counitng down to
-var countDate = new Date("January 15, 2019 15:37:25").getTime();
+var countDate = new Date("December 15, 2019 15:37:25").getTime();
 
 //Update th ecount down every second
-var interval =  setInterval(function() {
+var interval = setInterval(function () {
+
+  document.getElementById("time-left").textContent = "Time Left";
+
   //Gate todays date and time
   var today = new Date().getTime();
 
@@ -15,19 +18,24 @@ var interval =  setInterval(function() {
   var minute = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var second = Math.floor((distance % (1000 * 60)) / 1000);
 
+  // Formatting the hours, minutes and seconds for single digit values
   var hours, minutes, seconds;
+
+  // Formatting Hour
   if (hour < 10) {
     hours = '0' + hour;
   } else {
     hours = hour;
   }
 
+  // Formatting Minute
   if (minute < 10) {
     minutes = '0' + minute;
   } else {
     minutes = minute;
   }
 
+  // Formatting Second
   if (second < 10) {
     seconds = '0' + second;
   } else {
@@ -36,11 +44,17 @@ var interval =  setInterval(function() {
 
   //Display Countdown
   var element = document.getElementById('time');
-  element.innerHTML = days + " Days, <br>" + hours + " : " + minutes + " : " + seconds;
+  if (days > 0) {
+    element.innerHTML = days + " Days <small>&</small> <br>" + hours + " : " + minutes + " : " + seconds;
+  } else {
+    element.innerHTML = hours + " : " + minutes + " : " + seconds;
+  }
 
   // If count down is finished
   if (distance <= 0) {
     clearInterval(interval);
-    element.innerHTML = "EXPIRED!"
+    element.innerHTML = "TIME EXPIRED!";
+    document.getElementById("time-left").innerHTML = "";
   }
+
 }, 1000);
