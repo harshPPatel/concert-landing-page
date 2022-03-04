@@ -17,6 +17,7 @@
     "url": "https://github.com/harshPPatel/concert-landing-page/issues"
   },
   "homepage": "https://github.com/harshPPatel/concert-landing-page#readme",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "devDependencies": {
     "@parcel/packager-raw-url": "^2.3.2",
     "@parcel/transformer-sass": "^2.3.2",
