@@ -1,32 +1,26 @@
 {
-  "name": "landing-page",
+  "name": "concert-landing-page",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "This is a website build using basic website development technologies. The main focus of this project was to learn more about Gulp and JavaScript. Used gulp as a task manager for the project. Page shows time left for the concert on the screen. If the time is already expired, it shows Expired message on the screen.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "parcel src/index.html --open",
+    "build": "parcel build src/index.html --out-dir dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/harshPPatel/Landing-Page.git"
+    "url": "git+https://github.com/harshPPatel/concert-landing-page.git"
   },
-  "author": "",
+  "author": "harsh patel",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/harshPPatel/Landing-Page/issues"
+    "url": "https://github.com/harshPPatel/concert-landing-page/issues"
   },
-  "homepage": "https://github.com/harshPPatel/Landing-Page#readme",
+  "homepage": "https://github.com/harshPPatel/concert-landing-page#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.5",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-clean-css": "^3.10.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^5.0.3",
-    "gulp-plumber": "^1.2.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-uglify": "^3.0.1",
-    "pump": "^3.0.0"
+    "@parcel/packager-raw-url": "^2.3.2",
+    "@parcel/transformer-sass": "^2.3.2",
+    "@parcel/transformer-webmanifest": "^2.3.2",
+    "parcel": "^2.3.2"
   }
 }
