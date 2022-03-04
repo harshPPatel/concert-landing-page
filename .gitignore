@@ -121,3 +121,8 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/git,node,windows
+
+build/
+dist/
+node_modules/
+.parcel-cache/
